@@ -1,10 +1,10 @@
 
-def add(a,b):
+def multiply(a,b):
     return a*b
 
 if __name__ == '__main__':
     print("hello, World!")
 
-    print(add(2,5))
+    print(multiply(2,5))
 
 
