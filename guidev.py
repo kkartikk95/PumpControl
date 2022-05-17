@@ -1,18 +1,39 @@
 from tkinter import *
-import os
-from subprocess import call
 import threading
+import os
+import subprocess
+
+
+def p1():
+    # os.system('python testpy1.py')
+    threading.Thread(target=subprocess.run, args=(["python", "testpy1.py"],)).start()
+
+
+def p2():
+    # os.system('python testpy2.py')
+    threading.Thread(target=subprocess.run, args=(["python", "testpy2.py"],)).start()
+
+def p3():
+    # os.system('python testpy2.py')
+    threading.Thread(target=subprocess.run, args=(["python", "testpy3.py"],)).start()
+
+def p4():
+    # os.system('python testpy2.py')
+    threading.Thread(target=subprocess.run, args=(["python", "testpy4.py"],)).start()
+
 
 def test():
     pmpaddr = adr.get()
-    print(pmpaddr)
-    if pmpaddr ==1:
-        threading.Thread(target=call, args=("python testpy1.py",), ).start()
-    if pmpaddr==2:
-        threading.Thread(target=call, args=("python testpy2.py",), ).start()
-
-
-
+    if pmpaddr == 1:
+        p1()
+        # threading.Thread(target=call, args=("python testpy1.py" ,), ).start()
+    if pmpaddr == 2:
+        p2()
+        # os.system('python testpy2.py')
+    if pmpaddr == 3:
+        p3()
+    if pmpaddr == 4:
+        p4()
 
 root = Tk()
 root.title("IL-2 PK SIMULATION")
